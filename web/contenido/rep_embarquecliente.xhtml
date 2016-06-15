@@ -30,7 +30,7 @@ and open the template in the editor.
                         </div>
                         
                         <div class="col-xs-2" align="right">
-                            <label>Nombre de cliente:</label>
+                            <label>Cliente:</label>
                         </div>
                         
                         <div class="col-xs-1" align="center">
@@ -74,10 +74,11 @@ and open the template in the editor.
                     <!-- Botón Ver Reporte -->
                     <div class="form-group">
                         <div class="col-xs-12" align="center"><br/>
-                            <p:commandLink id="rptestados" disabled="#{fixme}" action="#{reportesControlador.repEstadosProyectos()}" class="btn btn-default" value="Ver Reporte" oncomplete="window.open('../servlets/report/PDF','_blank')" target="_blank">
+                            <p:commandLink   id="rptestados" disabled="#{fixme}" action="#{reportesControlador.repEstadosProyectos()}" class="btn btn-default" value="Ver Reporte" oncomplete="window.open('../servlets/report/PDF','_blank)" target="_blank">
                                 <f:setPropertyActionListener value="rpt_estados" target="#{reportesControlador.nombArch}"/>
                             </p:commandLink>
                         </div>
+                        <button href="./../contenido/embarquecliente.jsf" type="button" class="btn btn-primary">Ver Reporte</button>
                     </div>
                 </h:form>
             </p:fieldset><br/>
