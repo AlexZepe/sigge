@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../plantillas/plantilla1.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+        <!-- Contenedor -->
+        <ui:define name="content">
+            <!-- Panel -->
+            <p:fieldset style="height: 325px" class="form-horizontal"><br/>
+                <div class="form-group">
+                    <div class="col-xs-12"><br/>
+                        <h4 class="modal-title"><font color="507642"><center><b>REPORTE DE EMPLEADO DEL MES</b></center></font></h4>
+                    </div>
+                </div>
+
+               
+                <center>
+                           <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="20">
+                           <p:outputLabel for="console" value="Mes:" />
+                           <p:selectOneMenu id="console"  style="width:125px">
+                                      <f:selectItem itemLabel="     " itemValue="   " />
+                                      <f:selectItem itemLabel="Enero" itemValue="Enero" />
+                                      <f:selectItem itemLabel="Febrero" itemValue="Febrero" />
+                                      <f:selectItem itemLabel="Marzo" itemValue="Marzo" />
+                                      <f:selectItem itemLabel="Abril" itemValue="Abril" />
+                                      <f:selectItem itemLabel="Mayo" itemValue="Mayo" />
+                                      <f:selectItem itemLabel="Junio" itemValue="Junio" />
+                                      <f:selectItem itemLabel="Julio" itemValue="Julio" />
+                                      <f:selectItem itemLabel="Agosto" itemValue="Agosto" />
+                                      <f:selectItem itemLabel="Septiembre" itemValue="Septiembre" />
+                                      <f:selectItem itemLabel="Octubre" itemValue="Octubre" />
+                                      <f:selectItem itemLabel="Noviembre" itemValue="Noviembre" />
+                                      <f:selectItem itemLabel="Diciembre" itemValue="Diciembre" />
+                           </p:selectOneMenu>
+                           
+                            <p:outputLabel for="anyo" value="Año:" />
+                           <p:selectOneMenu id="anyo"  style="width:125px">
+                                      <f:selectItem itemLabel="     " itemValue="   " />
+                                      <f:selectItem itemLabel="2005" itemValue="2005" />
+                                      <f:selectItem itemLabel="2006" itemValue="2006" />
+                                      <f:selectItem itemLabel="2007" itemValue="2007" />
+                                      <f:selectItem itemLabel="2008" itemValue="2008" />
+                                      <f:selectItem itemLabel="2009" itemValue="2009" />
+                                      <f:selectItem itemLabel="2010" itemValue="2010" />
+                                      <f:selectItem itemLabel="2011" itemValue="2011" />
+                                      <f:selectItem itemLabel="2012" itemValue="2012" />
+                                      <f:selectItem itemLabel="2013" itemValue="2013" />
+                                      <f:selectItem itemLabel="2014" itemValue="2014" />
+                                      <f:selectItem itemLabel="2015" itemValue="2015" />
+                                      <f:selectItem itemLabel="2016" itemValue="2016" />
+                           </p:selectOneMenu>
+                           
+                         </h:panelGrid>
+                    
+                </center>
+                          
+                    
+                    <!-- Botón Ver Reporte -->
+                    <div class="form-group">
+                        <div class="col-xs-12" align="center"><br/>
+                            <p:commandLink   id="rptestados" disabled="#{fixme}" action="#{reportesControlador.repEstadosProyectos()}" class="btn btn-default" value="Ver Reporte" oncomplete="window.open('../servlets/report/PDF','_blank)" target="_blank">
+                                <f:setPropertyActionListener value="rpt_estados" target="#{reportesControlador.nombArch}"/>
+                            </p:commandLink>
+                        </div>
+                    </div>
+               
+            </p:fieldset><br/>
+        </ui:define>
+    </ui:composition>

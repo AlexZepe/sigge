@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="contenido/rep_embarquecliente.xhtml" x="379" y="56" zoom="true"/>
+        <Node id="resources/smartmenus/demo/bootstrap-navbar.html" x="814" y="236" zoom="true"/>
+        <Node id="index.xhtml" x="131" y="39" zoom="true"/>
+        <Node id="resources/smartmenus/demo/bootstrap-navbar-fixed-bottom.html" x="650" y="300" zoom="true"/>
+        <Node id="contenido/rep_embarques.xhtml" x="1004" y="172" zoom="true"/>
+        <Node id="contenido/embarquecliente.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="plantillas/plantilla1.xhtml" x="69" y="170" zoom="true"/>
+        <Node id="contenido/rep_nuevosclientes.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="resources/smartmenus/demo/index.html" x="446" y="249" zoom="true"/>
+        <Node id="resources/smartmenus/demo/keyboard-navigation.html" x="400" y="450" zoom="true"/>
+        <Node id="resources/smartmenus/demo/bootstrap-navbar-static-top.html" x="391" y="353" zoom="true"/>
+        <Node id="resources/smartmenus/demo/bootstrap-navbar-fixed-top.html" x="400" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

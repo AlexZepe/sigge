@@ -14,15 +14,14 @@ and open the template in the editor.
         <!-- Contenedor -->
         <ui:define name="content">
             <!-- Panel -->
-            <p:fieldset style="height: 325px" class="form-horizontal"><br/>
+            <p:fieldset style="height: 425px" class="form-horizontal"><br/>
                 <div class="form-group">
                     <div class="col-xs-12"><br/>
-                        <h4 class="modal-title"><font color="507642"><center><b>REPORTE DE NUEVOS CLIENTES</b></center></font></h4>
+                        <h4 class="modal-title"><font color="507642"><center><b>REPORTE DE CLIENTES ESTRELLAS</b></center></font></h4>
                     </div>
                 </div>
 
-               
-                <h:form id="repContactos" class="form-horizontal"><br/>
+               <h:form id="repContactos" class="form-horizontal"><br/>
                     
                     
                     <div class="form-group">
@@ -33,10 +32,36 @@ and open the template in the editor.
                             <label>Empleado:</label>
                         </div>
                         
-                        <div class="col-xs-1" align="center">
+                         <div class="col-xs-1" align="right">
                             <p:inputText />
-                        </div>  
+                        </div>
                     </div>
+                   
+                   <div class="form-group">
+                         
+                        
+                         <div class="col-xs-4">
+                        </div>
+                        
+                        <div class="col-xs-2" align="right">
+                           <p:outputLabel for="console" value="Pais:" />
+                        </div>
+                           
+                        <div class="col-xs-1" align="center">
+                           <p:selectOneMenu id="console"  style="width:125px">
+                                      <f:selectItem itemLabel="     " itemValue="   " />
+                                      <f:selectItem itemLabel="Panama" itemValue="Panama" />
+                                      <f:selectItem itemLabel="Mexico" itemValue="Mexico" />
+                                      <f:selectItem itemLabel="EEUU" itemValue="EEUU" />
+                                      <f:selectItem itemLabel="Colombia" itemValue="Colombia" />
+                                      <f:selectItem itemLabel="Costa Rica" itemValue="Costa Rica" />
+                                      <f:selectItem itemLabel="Uruguay" itemValue="Uruguay" />
+                                      
+                           </p:selectOneMenu>
+                        </div>
+                        
+                    </div>
+          
                     
                     <!-- Fecha Inicio -->
                     
