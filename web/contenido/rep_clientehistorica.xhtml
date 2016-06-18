@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./../plantillas/plantilla1.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+        <!-- Contenedor -->
+        <ui:define name="content">
+            <!-- Panel -->
+            <p:fieldset style="height: 425px" class="form-horizontal"><br/>
+                <div class="form-group">
+                    <div class="col-xs-12"><br/>
+                        <h4 class="modal-title"><font color="507642"><center><b>HISTORIAL DE CLIENTE</b></center></font></h4>
+                    </div>
+                </div>
+
+               <h:form id="repContactos" class="form-horizontal"><br/>
+                 
+                 
+               
+                   <div class="form-group">
+                        <div class="col-xs-4">
+                        </div>
+                        
+                        <div class="col-xs-2" align="right">
+                            <label>Cliente:</label>
+                        </div>
+                        
+                         <div class="col-xs-1" align="right">
+                            <p:inputText />
+                        </div>
+                    </div>
+            
+                    
+                    <!-- Fecha Inicio -->
+                    
+                    <div class="form-group">
+                        <div class="col-xs-4">
+                        </div>
+                        
+                        <div class="col-xs-2" align="right">
+                            <label>Fecha Inicio:</label>
+                        </div>
+                        <div class="col-xs-1" align="center">
+                            <p:calendar id="fechainicio" value="#{reportesControlador.fechaInicio}" locale="es" size="9" mask="true" navigator="true" pattern="dd-MM-yyyy">
+                                <p:ajax event="dateSelect" update="fechafin rptestados"/>
+                            </p:calendar>
+                        </div>
+                        <div class="col-xs-4">
+                        </div>
+                    </div>
+
+                    <!-- Fecha Fin -->
+                    <div class="form-group">
+                        <div class="col-xs-4">
+                        </div>
+                        <div class="col-xs-2" align="right">
+                        <label>Fecha Fin:</label>
+                        </div>
+                        <div class="col-xs-1" align="center">
+                            <p:calendar id="fechafin" value="#{reportesControlador.fechaFin}"
+                                        mindate="#{reportesControlador.fechaInicio}" locale="es" size="9" mask="true" navigator="true" pattern="dd-MM-yyyy">
+                                <p:ajax update="rptestados"/>
+                            </p:calendar>
+                        </div>
+                    </div>
+
+                    <!-- Botón Ver Reporte -->
+                    <div class="form-group">
+                        <div class="col-xs-12" align="center"><br/>
+                            <p:commandLink id="rptestados" disabled="#{fixme}" action="#{reportesControlador.repEstadosProyectos()}" class="btn btn-default" value="Ver Reporte" oncomplete="window.open('../servlets/report/PDF','_blank')" target="_blank">
+                                <f:setPropertyActionListener value="rpt_estados" target="#{reportesControlador.nombArch}"/>
+                            </p:commandLink>
+                        </div>
+                    </div>
+                </h:form>
+            </p:fieldset><br/>
+        </ui:define>
+        <ui:define name="scripts">
+            <script type="text/javascript">
+            PrimeFaces.locales['es'] = {
+                closeText: 'Cerrar',
+                prevText: 'Anterior',
+                nextText: 'Siguiente',
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Semana',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: '',
+                timeOnlyTitle: 'Sólo hora',
+                timeText: 'Tiempo',
+                hourText: 'Hora',
+                minuteText: 'Minuto',
+                secondText: 'Segundo',
+                currentText: 'Fecha actual',
+                ampm: false,
+                month: 'Mes',
+                week: 'Semana',
+                day: 'Día',
+                allDayText: 'Todo el día'
+            };
+            </script>
+        </ui:define>
+    </ui:composition>
